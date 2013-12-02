@@ -45,11 +45,6 @@ set fillchars="vert:|,fold: "
 set guioptions-=T
 set guioptions+=C
 
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
-colo koehler
-
 "I'm a lamer who navigates with arrow keys, so let's make 'k' and 'j' do
 "something slightly different and useful, which is to navigate long lines
 "according to what's up or down on the screen.
@@ -64,7 +59,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 "My vundles
@@ -74,4 +69,19 @@ Bundle 'nvie/vim-flake8'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'scrooloose/nerdtree'
 
+"Bundle configuration
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+set t_Co=256
+set background=dark
+
+map <Leader>o :NERDTreeToggle<CR>
+let g:NERDTreeChdirMode=2
+let g:NERDTreeQuitOnOpen=1
