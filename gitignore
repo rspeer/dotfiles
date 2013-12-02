@@ -1,0 +1,9 @@
+# Not the .gitignore for this repo -- it's a reasonable .gitignore for working
+# with Python code.
+*.pyc
+__pycache__
+.coverage
+dist
+*.egg-info
+build
+_build

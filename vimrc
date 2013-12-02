@@ -1,8 +1,8 @@
 "Rob's .vimrc file.
 "
-"I discovered from the comments that this file has been around on my computers
-"since about 2000. Up until 2013 it still began with the following
-"increasingly inaccurate comment:
+"I discovered that this file has been around on my computers since about 2000.
+"Up until 2013 it still began with the following increasingly inaccurate
+"comment:
 "
 ""Linux-Mandrake configuration.
 ""Chmouel Boudjnah <chmouel@mandrakesoft.com>
@@ -12,11 +12,9 @@
 "turned off, and some of them don't work anymore, but it was a great start.
 "Thanks, Chmouel.
 
-"Syntax highlighting.
-syntax on
-
-"Display a status-line.
-set statusline=~
+"Some initial setup that's required for vundle:
+set nocompatible
+filetype off
 
 "I don't need what ctrl-A and ctrl-E do by default in vim. Somewhere I picked
 "up the Emacs keystrokes, so let's make them do that instead.
@@ -35,24 +33,12 @@ set expandtab
 
 "If I want things to wrap, I'll do it myself.
 set textwidth=0
+set nowrap
 
-"Make the backspace key do what you expect. (Is this still necessary?)
-set bs=2
-
-"Incremental search
-set incsearch
-
-"Show the position of the cursor.
-set ruler
-
-"Show matching parenthese.
-set showmatch
-
-set autoindent
-set ttyscroll=0
+"Miscellaneous editing options.
+"I don't have to add very many of these, because I use the 'vim-sensible'
+"plugin.
 set shiftwidth=4
-set modeline
-set modelines=5
 set fillchars="vert:|,fold: "
 
 "Turn off the toolbar. Turn on something else; I forget.
@@ -64,15 +50,28 @@ set fileencoding=utf-8
 set termencoding=utf-8
 colo koehler
 
-"if !exists("autocommands_loaded")
-"  let autocommands_loaded = 1
-"  autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
-"endif
-
-nmap ; :
+"I'm a lamer who navigates with arrow keys, so let's make 'k' and 'j' do
+"something slightly different and useful, which is to navigate long lines
+"according to what's up or down on the screen.
 nnoremap <silent> k gk
 nnoremap <silent> j gj
 
-set wildmenu
-set wildmode=list:longest,full
-filetype plugin on
+"Life's too short to hit shift.
+nmap ; :
+
+"vundle configuration
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+"My vundles
+Bundle 'tpope/vim-sensible'
+Bundle 'kevinw/pyflakes-vim'
+Bundle 'nvie/vim-flake8'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
+Bundle 'hynek/vim-python-pep8-indent'
+

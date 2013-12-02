@@ -1,0 +1,5 @@
+[user]
+	name = Rob Speer
+	email = rob@luminoso.com
+[push]
+	default = simple
