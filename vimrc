@@ -74,6 +74,8 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/TaskList.vim'
 
 "Bundle configuration
 let g:airline_left_sep = ''
@@ -82,6 +84,8 @@ let g:airline_right_sep = ''
 set t_Co=256
 set background=dark
 
-map <Leader>o :NERDTreeToggle<CR>
+nmap <Leader>o :NERDTreeToggle<CR>
+nmap <Leader>r :TagbarToggle<CR>
 let g:NERDTreeChdirMode=2
 let g:NERDTreeQuitOnOpen=1
+let g:tagbar_autoclose=1
