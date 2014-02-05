@@ -33,7 +33,6 @@ set expandtab
 
 "If I want things to wrap, I'll do it myself.
 set textwidth=0
-set nowrap
 
 "Miscellaneous editing options.
 "I don't have to add very many of these, because I use the 'vim-sensible'
@@ -54,6 +53,9 @@ nnoremap <silent> j gj
 "Life's too short to hit shift.
 nmap ; :
 
+"Bundle pre-configuration
+autocmd FileType python map <buffer> <Leader>8 :call Flake8()<CR>
+
 "vundle configuration
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -66,7 +68,6 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'nvie/vim-flake8'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'tpope/vim-fugitive'
@@ -83,9 +84,17 @@ let g:airline_right_sep = ''
 
 set t_Co=256
 set background=dark
+"set updatetime=2000
 
 nmap <Leader>o :NERDTreeToggle<CR>
-nmap <Leader>r :TagbarToggle<CR>
+nmap <Leader>l :TagbarToggle<CR>
+nmap [5;5~ <C-PageUp>
+nmap [6;5~ <C-PageDown>
+nmap [5;5~ <C-PageUp>a
+nmap [6;5~ <C-PageDown>a
+
 let g:NERDTreeChdirMode=2
 let g:NERDTreeQuitOnOpen=1
-let g:tagbar_autoclose=1
+"let g:tagbar_autoclose=1
+let g:tagbar_sort = 0
+let g:tagbar_autoshowtag = 1
