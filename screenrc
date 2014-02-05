@@ -1,0 +1,22 @@
+shell -$SHELL
+startup_message off
+
+defscrollback 2000
+autodetach on
+
+caption always "%{= bb}%{+b w}%n %h %=%t %c"
+
+#caption     always        "%{+b rk}%H%{gk} |%c %{yk}%d.%m.%Y | %72=Load: %l %{wk}"
+#hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
+
+caption always "%{wK}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wK}%?%+Lw%? %= %{=Kw}%110`%109`%111`"
+hardstatus alwayslastline '%{KG}%H [%1`]%{Kw} %= Load: %l'
+shelltitle "$ |bash"
+
+bind ^Q
+bind q
+bind ^S
+bind s
+
+screen
+screen $SHELL -c 'screen -X backtick 1 0 0 echo $STY'
