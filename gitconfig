@@ -1,5 +1,21 @@
 [user]
 	name = Rob Speer
-	email = rob@luminoso.com
+    email = rob@luminoso.com
 [push]
-	default = simple
+    default = upstream
+[pull]
+    default = upstream
+[alias]
+    l = log --oneline --decorate --graph --color
+    graph = log --graph --abbrev-commit --pretty=oneline --decorate --color
+    g = log --graph --abbrev-commit --pretty=oneline --decorate --all --color
+    uncommit = reset --soft HEAD^
+    unstage = reset HEAD --
+[core]
+    editor = vim
+[color]
+    ui = true
+[color "status"]
+    changed = yellow
+    added = green
+    untracked = red
